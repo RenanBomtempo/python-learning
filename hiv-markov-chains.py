@@ -1,4 +1,7 @@
-#--ALC / LISTA 1 / ex 1--
+#-----
+# This program was created for solving a problem presented 
+# in the list of exercises (1) of my Computational Linear Algebra class.
+#-----
 import numpy as np
 from numpy.linalg import matrix_power
 
@@ -17,10 +20,8 @@ pi_vector = np.array([0.85, 0.10, 0.05, 0.00])
 #number of years to be computed
 n = int(float(input("Number of years:")))
 
-#compute stochastic_matrix to the nth power
-stochastic_matrix = matrix_power(stochastic_matrix, n)
-print("\nStochastic matrix after", n,"years:\n", stochastic_matrix)
-
 #compute final the final state of the pi_vector
-final_state = pi_vector @ stochastic_matrix
+final_state = pi_vector @ matrix_power(stochastic_matrix, n)
+
+#print the result
 print("\nFinal state  vector:\n", final_state)
